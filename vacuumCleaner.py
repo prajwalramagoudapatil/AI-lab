@@ -11,6 +11,13 @@ def vacuum_world():
     location_input = input("Enter Location of Vacuum") #user_input of location vacuum is placed
     status_input = input("Enter status of " + location_input) #user_input if location is dirty or clean
     status_input_complement = input("Enter status of other room")
+    if location_input == 'A' :
+        goal_state[location_input]=str(status_input)
+        goal_state['B']=str(status_input_complement)
+    else :
+        goal_state[location_input]=str(status_input)
+        goal_state['A']=str(status_input_complement)
+        
     print("Initial Location Condition" + str(goal_state))
 
     if location_input == 'A':
